@@ -1,5 +1,6 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow, Menu, shell} = require('electron');
+const defaultMenu = require('electron-default-menu');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -69,48 +70,52 @@ app.on('activate', function () {
     }
 });
 
-const template = [
-    {
-        label: app.getName(),
-        submenu: [
-            {role: 'about'},
-            {type: 'separator'},
-            {role: 'reload'},
-            {role: 'forceReload'},
-            {type: 'separator'},
-            {role: 'minimize'},
-            {role: 'hide'},
-            {role: 'hideothers'},
-            {role: 'unhide'},
-            {type: 'separator'},
-            {role: 'services'},
-            {type: 'separator'},
-            {
-                label: 'Web Version',
-                click() {
-                    require('electron').shell.openExternal('https://instagram.com')
-                }
-            },
-            {
-                label: 'App Store',
-                click() {
-                    require('electron').shell.openExternal('https://apps.apple.com/tr/app/instagram/id389801252')
-                }
-            },
-            {
-                label: 'Google Play',
-                click() {
-                    require('electron').shell.openExternal('https://play.google.com/store/apps/details?id=com.instagram.android&hl=tr')
-                }
-            },
-            {type: 'separator'},
-            {role: 'quit'}
-        ]
-    },
-];
+const template =  {
+    label: app.getName(),
+    submenu: [
+        {role: 'about'},
+        {type: 'separator'},
+        {role: 'reload'},
+        {role: 'forceReload'},
+        {type: 'separator'},
+        {role: 'minimize'},
+        {role: 'hide'},
+        {role: 'hideothers'},
+        {role: 'unhide'},
+        {type: 'separator'},
+        {role: 'services'},
+        {type: 'separator'},
+        {
+            label: 'Web Version',
+            click() {
+                require('electron').shell.openExternal('https://instagram.com')
+            }
+        },
+        {
+            label: 'App Store',
+            click() {
+                require('electron').shell.openExternal('https://apps.apple.com/tr/app/instagram/id389801252')
+            }
+        },
+        {
+            label: 'Google Play',
+            click() {
+                require('electron').shell.openExternal('https://play.google.com/store/apps/details?id=com.instagram.android&hl=tr')
+            }
+        },
+        {type: 'separator'},
+        {role: 'quit'}
+    ]
+};
 
-const menu = Menu.buildFromTemplate(template);
-Menu.setApplicationMenu(menu);
+// create default macOS menu (<=> default OS menu)
+const menu = defaultMenu(app, shell);
+
+// apply template at index 0 and delete 1 time (<=> delete default 'About' submenu)
+menu.splice(0, 1, template);
+
+// set menu for app
+Menu.setApplicationMenu(Menu.buildFromTemplate(menu));
 
 // ---------
 

@@ -1,5 +1,6 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow, Menu, shell} = require('electron');
+const defaultMenu = require('electron-default-menu');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -69,7 +70,7 @@ app.on('activate', function () {
     }
 });
 
-const template = [
+const template = 
     {
         label: app.getName(),
         submenu: [
@@ -106,11 +107,13 @@ const template = [
             {type: 'separator'},
             {role: 'quit'}
         ]
-    },
-];
+    }
 
-// const menu = Menu.buildFromTemplate(template);
-Menu.setApplicationMenu(null);
+const menu = defaultMenu(app, shell);
+
+menu.splice(0, 1, template);
+
+Menu.setApplicationMenu(Menu.buildFromTemplate(menu));
 
 // ---------
 

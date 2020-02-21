@@ -25,6 +25,7 @@
   "dependencies": {
     "core-util-is": "^1.0.2",
     "electron-context-menu": "^0.15.1",
+    "electron-default-menu": "^1.0.1",
     "electron-store": "^2.0.0"
   }
 }
