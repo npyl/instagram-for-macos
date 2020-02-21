@@ -10,7 +10,7 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 414,
         height: 766,
-        resizable: false,
+        resizable: true,
         fullscreenable: false,
         minimizable: true,
         closable: true,
@@ -109,8 +109,8 @@ const template = [
     },
 ];
 
-const menu = Menu.buildFromTemplate(template);
-Menu.setApplicationMenu(menu);
+// const menu = Menu.buildFromTemplate(template);
+Menu.setApplicationMenu(null);
 
 // ---------
 
