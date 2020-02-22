@@ -10,7 +10,7 @@ And when I picked up the phone, I was distracted. 📱😬
 
 It has all the features in the mobile web version of Instagram.
 
-### Differencies with fattihkoca's client:
+### Features in this client (compared to fattihkoca's client):
 - Ability to resize window
 - Ability to maximize & put window to fullscreen
 - Many (if not all) standard macOS shortcuts now work (thanks to a more complete macOS menu)
