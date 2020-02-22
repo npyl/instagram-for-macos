@@ -4,11 +4,21 @@
 
 A simple application that will allow you to easily look at your Instagram account while working with Mac. 💻
 
-I actually prepared this application to meet my own need. I had to look at the phone every time to look at Instagram comments and messages (Direct). And when I picked up the phone, I was distracted. 📱😬
+I actually prepared this application to meet my own needs. <br>
+I had to look at the phone every time to look at Instagram comments and messages (Direct). <br>
+And when I picked up the phone, I was distracted. 📱😬
 
 It has all the features in the mobile web version of Instagram.
 
-**[DOWNLOAD](https://github.com/fattihkoca/instagram-for-macos/releases/download/v0.0.2/Instagram.for.MacOS.zip)**
+### Differencies with fattihkoca's client:
+- Ability to resize window
+- Ability to maximize & put window to fullscreen
+- Many (if not all) standard macOS shortcuts now work (thanks to a more complete macOS menu)
+
+### TODO:
+- probably an updater
+
+**[DOWNLOAD](https://github.com/npyl/instagram-for-macos/releases/download/v0.0.2_npyl/Instagram.for.MacOS.zip)**
 
 ---
 
